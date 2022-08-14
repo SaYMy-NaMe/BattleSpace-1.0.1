@@ -4,3 +4,14 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.mygdx.game.BattleSpace;
 import com.mygdx.game.tools.CollisionRect;
+
+public class Astroid{
+    public static final  int SPEED = 250;
+    public static final  int WIDTH  = 25;
+    public static final  int HEIGHT  = 25;
+
+    public static Texture texture;
+    float x,y;
+    CollisionRect rect;
+    public boolean remove = false;
+}
