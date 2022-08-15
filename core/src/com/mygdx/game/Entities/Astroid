@@ -14,4 +14,27 @@ public class Astroid{
     float x,y;
     CollisionRect rect;
     public boolean remove = false;
+    public Astroid(float x )
+    {
+        this.x = x;
+        this.y = BattleSpace.HEIGHT;
+        this.rect = new CollisionRect(x,y,WIDTH,HEIGHT);
+        if(texture == null)
+        {
+            texture = new Texture("asteroid.png");
+
+        }
+
+    }
+    public void update(float deltaTime)
+    {
+        y -= SPEED * deltaTime;
+        if(y < -HEIGHT)
+        {
+            remove = true;
+
+        }
+        rect.move(x,y);
+
+    }
 }
