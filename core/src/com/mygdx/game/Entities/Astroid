@@ -37,4 +37,18 @@ public class Astroid{
         rect.move(x,y);
 
     }
+    public void  render (SpriteBatch batch)
+    {
+        batch.draw(texture,x,y,WIDTH,HEIGHT);
+    }
+    public CollisionRect getCollisionRect() {
+        return rect;
+    }
+    public float getX () {
+        return x;
+    }
+
+    public float getY () {
+        return y;
+    }
 }
