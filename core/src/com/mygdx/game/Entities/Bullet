@@ -1,0 +1,22 @@
+// 
+// Decompiled by Procyon v0.5.36
+// 
+
+package com.mygdx.game.entities;
+
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.mygdx.game.tools.CollisionRect;
+import com.badlogic.gdx.graphics.Texture;
+public class Bullet
+{
+    public static final int speed = 500;
+    public static final int DEFAULT_Y = 40;
+    public static final int WIDTH = 3;
+    public static final int HEIGHT = 12;
+    public static Texture texture;
+    float x;
+    float y;
+    CollisionRect rect;
+    public boolean remove;
+    }
+}
