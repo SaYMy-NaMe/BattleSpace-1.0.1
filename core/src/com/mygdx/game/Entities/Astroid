@@ -42,4 +42,13 @@ public class Astroid{
         batch.draw(texture,x,y,WIDTH,HEIGHT);
     }
    //Need to Change for a little bit here! 
+public CollisionRect getCollisionRect() {
+        return rect; //return the rect
+    }
+    public float getX () {
+        return x;
+    }
+    public float getY () {
+        return y;
+    }
 }
