@@ -14,16 +14,17 @@ public class Bullet
     float y;
     CollisionRect rect;
     public boolean remove;
+    //all the instance variables has been updated! 
     public Bullet(final float x) {
         this.remove = false;
         this.x = x;
         this.y = 40.0f;
         this.rect = new CollisionRect(x, this.y, 3, 12);
         if (Bullet.texture == null) {
-            Bullet.texture = new Texture("bullet.png");
+            Bullet.texture = new Texture("bullet.png"); //loading bullet picture
         }
     }
-        public void update(final float deltaTime) {
+        public void update(final float deltaTime) { //delta time method
         this.y += 500.0f * deltaTime;
         if (this.y > 690.0f) {
             this.remove = true;
