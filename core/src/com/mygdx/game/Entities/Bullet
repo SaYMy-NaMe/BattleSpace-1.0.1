@@ -1,0 +1,40 @@
+package com.mygdx.game.entities;
+
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.mygdx.game.tools.CollisionRect;
+import com.badlogic.gdx.graphics.Texture;
+public class Bullet
+{
+    public static final int speed = 500;
+    public static final int DEFAULT_Y = 40;
+    public static final int WIDTH = 3;
+    public static final int HEIGHT = 12;
+    public static Texture texture;
+    float x;
+    float y;
+    CollisionRect rect;
+    public boolean remove;
+    public Bullet(final float x) {
+        this.remove = false;
+        this.x = x;
+        this.y = 40.0f;
+        this.rect = new CollisionRect(x, this.y, 3, 12);
+        if (Bullet.texture == null) {
+            Bullet.texture = new Texture("bullet.png");
+        }
+    }
+        public void update(final float deltaTime) {
+        this.y += 500.0f * deltaTime;
+        if (this.y > 690.0f) {
+            this.remove = true;
+        }
+        this.rect.move(this.x, this.y);
+    }
+    //Two more methods added! 
+    public void render(final SpriteBatch batch) {
+        batch.draw(Bullet.texture, this.x, this.y);
+    }
+        public CollisionRect getCollisionRect() {
+        return this.rect;
+    }
+}
