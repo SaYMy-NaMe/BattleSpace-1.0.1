@@ -5,5 +5,22 @@ import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Animation;
 public class Explosion {
-//Need to add methods!! 
+//some methods added
+public Explosion(final float x, final float y) {
+        this.remove = false;
+        this.x = x - 8.0f;
+        this.y = y - 8.0f;
+        this.statetime = 0.0f;
+        if (Explosion.anim == null) {
+            Explosion.anim = new Animation(0.2f, (Object[])TextureRegion.split(new Texture("explosion.png"), 32, 32)[0]);
+        }
+    }
+    
+    public void update(final float deltatime) {
+        this.statetime += deltatime;
+        if (Explosion.anim.isAnimationFinished(this.statetime)) {
+            this.remove = true;
+        }
+    }
 }
+//Yet to fixed a lot 
