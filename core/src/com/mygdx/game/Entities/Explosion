@@ -14,13 +14,19 @@ public Explosion(final float x, final float y) {
         if (Explosion.anim == null) {
             Explosion.anim = new Animation(0.2f, (Object[])TextureRegion.split(new Texture("explosion.png"), 32, 32)[0]);
         }
-    }
-    
+    }  
     public void update(final float deltatime) {
         this.statetime += deltatime;
         if (Explosion.anim.isAnimationFinished(this.statetime)) {
             this.remove = true;
         }
     }
+//Rendering method updated! 
+ public void render(final SpriteBatch batch) {
+        batch.draw((TextureRegion)Explosion.anim.getKeyFrame(this.statetime), this.x, this.y, 64.0f, 64.0f);
+    }
+    static {
+        Explosion.anim = null;
+    }
 }
-//Yet to fixed a lot 
+
